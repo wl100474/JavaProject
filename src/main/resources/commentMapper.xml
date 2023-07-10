@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wl1004.project.comment.CommentMapper">
+	<!-- 댓글 등록 -->
+	<select id="getCmt" parameterType="int" resultType="HashMap">
+		select * from
+		cmt where c_no = #{c_no}
+	</select>
+	<update id="setAnsnum" parameterType="int">
+		<![CDATA[update cmt set c_ansnum = c_ansnum + 1 where v_no = #{v_no} and c_ansnum >= #{c_ansnum}]]>
+	</update>
+	<insert id="regCmt"
+		parameterType="com.wl1004.project.comment.Comment">
+		insert into cmt values(cmt_seq.nextval, #{v_no},
+		#{c_id}, #{c_content}, sysdate, #{c_indent}, #{c_ansnum})
+	</insert>
+	
+	<!-- 댓글 페이징 -->
+	<select id="getAllCmt" parameterType="int"
+		resultType="com.wl1004.project.comment.Comment">
+		<![CDATA[select * from ( 
+				select rownum as rn, c_no, v_no, c_id, c_content, c_regdate, c_indent, c_ansnum
+				from ( select * 
+						from cmt 
+						where v_no = #{v_no}
+						order by c_ansnum
+					) 
+				) where rn >= #{start} and rn <= #{end}]]>
+	</select>
+	<select id="countCmt" parameterType="int" resultType="int">
+		select count(*) from cmt where v_no = #{v_no}
+	</select>
+	
+	<!-- 댓글 삭제 -->
+	<update id="deleteCmt" parameterType="int">
+		update cmt set c_id = null,
+		c_content = '삭제된 댓글입니다.' where v_no = #{v_no} and c_no = #{c_no}
+	</update>
+	
+	<!-- 댓글 수정 -->
+	<update id="updateCmt" parameterType="map">
+		update cmt set c_content =
+		#{c_content}, c_regdate = sysdate where v_no = #{v_no} and c_no =
+		#{c_no}
+	</update>
+</mapper>

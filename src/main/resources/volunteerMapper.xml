@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wl1004.project.volunteer.VolunteerMapper">
+	<!-- 봉사 등록 -->
+	<insert id="regVol"
+		parameterType="com.wl1004.project.volunteer.Volunteer">
+		insert into volunteer values(volunteer_seq.nextval,
+		#{v_writer}, #{v_type},
+		#{v_title}, #{v_content}, #{v_date}, #{v_time},
+		#{v_area}, #{v_recruit}, 0, 1, #{v_chat}, sysdate)
+	</insert>
+
+	<!-- 봉사 상세보기 -->
+	<select id="getDetail" parameterType="int"
+		resultType="com.wl1004.project.volunteer.Volunteer">
+		select * from volunteer where v_no = #{v_no}
+	</select>
+
+	<!-- 전체 봉사 갯수 -->
+	<select id="count" resultType="int">
+		select count(*) from volunteer
+	</select>
+
+	<!-- 검색어에 해당하는 봉사 갯수 -->
+	<select id="countSearch" resultType="int" parameterType="String">
+		select
+		count(*) from volunteer where v_type like '%' || #{type} || '%'
+	</select>
+
+	<!-- 전체 봉사 목록 페이징 -->
+	<select id="getAllList" parameterType="map"
+		resultType="com.wl1004.project.volunteer.Volunteer">
+		<![CDATA[select * from ( 
+				select rownum as rn, v_no, v_writer, v_type, v_title, v_content, v_date, v_time, v_area, v_recruit, v_staff, v_status, v_chat, v_regdate 
+				from ( select * 
+						from volunteer 
+						where v_type like '%' ||  #{search} || '%'
+						order by v_no desc
+					) 
+				) where rn >= #{start} and rn <= #{end}]]>
+	</select>
+
+	<!-- 봉사 수정 -->
+	<update id="update"
+		parameterType="com.wl1004.project.volunteer.Volunteer">
+		update volunteer
+		set v_type = #{v_type}, v_title =
+		#{v_title},
+		v_content = #{v_content}, v_date = #{v_date},
+		v_time =
+		#{v_time}, v_area = #{v_area},
+		v_recruit = #{v_recruit}, v_chat =
+		#{v_chat}
+		where v_no = #{v_no}
+	</update>
+
+	<!-- 봉사 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from volunteer where
+		v_no = #{v_no}
+	</delete>
+
+	<!-- 봉사 신청 -->
+	<insert id="apply" parameterType="map">
+		insert into v_list
+		values(#{v_no}, #{m_id})
+	</insert>
+	<update id="countP" parameterType="int">
+		update volunteer set v_staff =
+		v_staff + 1 where v_no = #{v_no}
+	</update>
+
+	<!-- 명단에서 데이터 가져오기 -->
+	<select id="getP" parameterType="map"
+		resultType="com.wl1004.project.volunteer.StaffList">
+		select * from v_list where v_no = #{v_no} and v_id =
+		#{m_id}
+	</select>
+
+	<!-- 봉사 신청 취소 -->
+	<delete id="cancelV1" parameterType="map">
+		delete from v_list where
+		v_no = #{v_no} and v_id = #{v_id}
+	</delete>
+	<update id="cancelV2" parameterType="int">
+		update volunteer set v_staff
+		= v_staff - 1 where v_no = #{v_no}
+	</update>
+
+	<!-- 봉사 상태 업데이트 -->
+	<update id="updateStatus0"> <!-- 마감 -->
+		update VOLUNTEER set v_status = 0 where v_recruit = v_staff
+	</update>
+	<update id="updateStatus1"> <!-- 모집중 -->
+		update VOLUNTEER set v_status = 1 where v_recruit != v_staff
+	</update>
+	<update id="updateStatus2" parameterType="String"> <!--종료 -->
+		<![CDATA[update VOLUNTEER set v_status = 2 where v_date <= #{today}]]>
+	</update>
+
+
+	<!-- 로그인한 회원이 작성한 봉사 목록 -->
+	<select id="getMyList" parameterType="map"
+		resultType="com.wl1004.project.volunteer.Volunteer">
+		<![CDATA[select * from ( 
+				select rownum as rn, v_no, v_writer, v_type, v_title, v_content, v_date, v_time, v_area, v_recruit, v_staff, v_status, v_chat, v_regdate 
+				from ( select * 
+						from volunteer 
+						where v_writer = #{m_id}
+						order by v_no desc
+					) 
+				) where rn >= #{start} and rn <= #{end}]]>
+	</select>
+
+	<!-- 로그인한 회원이 신청한 봉사 목록 -->
+	<select id="getMyList2" parameterType="map"
+		resultType="com.wl1004.project.volunteer.Volunteer">
+		<![CDATA[select * from ( 
+				select rownum as rn, v_no, v_writer, v_type, v_title, v_content, v_date, v_time, v_area, v_recruit, v_staff, v_status, v_chat, v_regdate 
+				from ( select * 
+						from volunteer 
+						where v_no in (select v_no from v_list where v_id = #{m_id})
+						order by volunteer.v_no desc
+					) 
+				) where rn >= #{start} and rn <= #{end}]]>
+	</select>
+
+	<!-- 유저가 작성한 봉사 갯수 -->
+	<select id="countUserBoards1"
+		parameterType="com.wl1004.project.member.Member" resultType="int">
+		select
+		count(*) from volunteer where v_writer = #{m_id}
+	</select>
+
+	<!-- 유저가 참여한 봉사 갯수 -->
+	<select id="countUserBoards2"
+		parameterType="com.wl1004.project.member.Member" resultType="int">
+		select
+		count(*) from v_list where v_id = #{m_id}
+	</select>
+
+	<!-- 로그인한 회원이 작성한 봉사 목록 5개 -->
+	<select id="getMyList_5" parameterType="String"
+		resultType="com.wl1004.project.volunteer.Volunteer">
+		<![CDATA[select * from ( 
+				select rownum as rn, v_no, v_writer, v_type, v_title, v_content, v_date, v_time, v_area, v_recruit, v_staff, v_status, v_chat, v_regdate 
+				from ( select * 
+						from volunteer 
+						where v_writer = #{m_id}
+						order by v_no desc
+					) 
+				) where rn <= 5]]>
+	</select>
+
+	<!-- 로그인한 회원이 신청한 봉사 목록 5개 -->
+	<select id="getMyList2_5" parameterType="String"
+		resultType="com.wl1004.project.volunteer.Volunteer">
+		<![CDATA[select * from ( 
+				select rownum as rn, v_no, v_writer, v_type, v_title, v_content, v_date, v_time, v_area, v_recruit, v_staff, v_status, v_chat, v_regdate 
+				from ( select * 
+						from volunteer 
+						where v_no in (select v_no from v_list where v_id = #{m_id})
+						order by volunteer.v_no desc
+					) 
+				) where rn <= 5]]>
+	</select>
+	
+	<!-- 관리자 페이지에서 활용 -->
+	<select id="getCount" resultType="map">
+	<![CDATA[
+		select count(*) as count, to_char(v_regdate, 'yyyy-mm-dd') as v_regdate
+		from volunteer
+		group by to_char(v_regdate, 'yyyy-mm-dd')
+		order by v_regdate
+		]]>
+	</select>
+	
+</mapper>

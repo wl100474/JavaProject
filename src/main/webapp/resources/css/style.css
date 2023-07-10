@@ -1,0 +1,717 @@
+/* =======================================================
+*
+* 	Template Style 
+*	Edit this section
+*	배경화면 출처 : 사진: <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/RvF2R_qMpRk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>의<a href="https://unsplash.com/fr/@hannahbusing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hannah Busing</a>
+* 사진: <a href="https://unsplash.com/ko/%EC%BB%AC%EB%A0%89%EC%85%98/41673473/volunteering?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>의<a href="https://unsplash.com/@jmuniz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joel Muniz</a>
+* ======================================================= */
+body {
+	font-family: "Open Sans", Arial, sans-serif;
+	line-height: 1.5;
+	font-size: 16px;
+	color: #848484;
+	background-color: #f0f0f0;
+}
+
+body.style-2 {
+	background-color: #ffffff;
+	background-size: cover;
+	background-position: 50% 30%;
+	background-repeat: no-repeat;
+	background-image: url(../images/p.jpg);
+	height: 100%;
+}
+
+a {
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.title {
+	color: white;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.menu {
+	padding: 0;
+	margin: 30px 0 0 0;
+}
+
+.menu li {
+	list-style: none;
+	margin-bottom: 10px;
+	display: -moz-inline-stack;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+
+.menu li a {
+	padding: 5px;
+}
+
+.menu li.active a {
+	color: #b3b3b3;
+}
+
+.fh5co-form {
+	padding: 30px;
+	margin-top: 4em;
+	-webkit-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	-o-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	background: #ffffff;
+	overflow: hidden;
+}
+
+.style-2 .fh5co-form {
+	-webkit-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	-o-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+	.fh5co-form {
+		padding: 15px;
+	}
+}
+
+.fh5co-form h2 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 20px;
+	margin: 0 0 30px 0;
+	color: #000000;
+}
+
+.fh5co-form .form-group {
+	margin-bottom: 30px;
+}
+
+.fh5co-form .form-group p {
+	font-size: 14px;
+	color: #9f9f9f;
+	font-weight: 300;
+}
+
+.fh5co-form .form-group p a {
+	color: #000000;
+}
+
+.fh5co-form label {
+	font-weight: 300;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.fh5co-form .form-control {
+	font-size: 16px;
+	font-weight: 300;
+	height: 50px;
+	padding-left: 0;
+	padding-right: 0;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	border-radius: 0px;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.fh5co-form .form-control::-webkit-input-placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	text-transform: uppercase;
+}
+
+.fh5co-form .form-control::-moz-placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	text-transform: uppercase;
+}
+
+.fh5co-form .form-control:-ms-input-placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	text-transform: uppercase;
+}
+
+.fh5co-form .form-control:-moz-placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	text-transform: uppercase;
+}
+
+.fh5co-form .form-control:focus, .fh5co-form .form-control:active {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary {
+	height: 50px;
+	padding-right: 20px;
+	padding-left: 20px;
+	border: none;
+	background: #33cccc;
+	color: #ffffff;
+	-webkit-box-shadow: -2px 10px 20px -1px rgba(51, 204, 204, 0.4);
+	-moz-box-shadow: -2px 10px 20px -1px rgba(51, 204, 204, 0.4);
+	-o-box-shadow: -2px 10px 20px -1px rgba(51, 204, 204, 0.4);
+	box-shadow: -2px 10px 20px -1px rgba(51, 204, 204, 0.4);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	color: #ffffff;
+	background: #47d1d1 !important;
+	outline: none;
+}
+
+input, textarea {
+	color: #000;
+}
+
+.placeholder {
+	color: #aaa;
+}
+
+.js .animate-box {
+	opacity: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
+.btn-del {
+	height: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 18px;
+	font-weight: 400;
+	border: none;
+	background: red;
+	color: #ffffff;
+	float: right;
+}
+
+.myListTbl {
+	margin-top: 70px;
+}
+
+.wbtn {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+.myDiv {
+	border: 1px solid silver;
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+.myTitle {
+	font-size: 20pt;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 15px;
+	color: #337ab7;
+}
+
+.myTbl {
+	margin: 0 auto;
+	width: 95%;
+}
+
+.vTitle {
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+.pageCount {
+	text-align: center;
+}
+
+.more {
+	float: right;
+}
+
+.main {
+	clear: both;
+}
+
+.search {
+	float: right;
+	margin-right: 10px;
+	margin-top: 4px;
+}
+
+.searchBtn {
+	float: right;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #337ab7;
+	color: #ffffff;
+}
+
+.myBtnColor {
+	height: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #337ab7;
+	color: #ffffff;
+}
+
+.wGroup {
+	width: 100%;
+	text-align: center;
+}
+
+.mouse {
+	cursor: pointer;
+}
+
+.myBtnRight { /*버튼 float:right 주고 싶을 때*/
+	height: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #337ab7;
+	color: #ffffff;
+	float: right;
+	margin-left: 10px;
+}
+
+.myBtnLeft { /*버튼 float:left 주고 싶을 때*/
+	float: left;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #337ab7;
+	color: #ffffff;
+}
+
+.myBtn-DelRight { /*삭제버튼 float:right 주고 싶을 때*/
+	height: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: red;
+	color: #ffffff;
+	float: right;
+	margin-left: 10px;
+}
+
+.myBtnCenter { /* 버튼 센터에 주고 싶을 때 */
+	height: 50px;
+	width: 100px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #337ab7;
+	color: #ffffff;
+	margin: 0 auto;
+	display: block;
+}
+
+.textB {
+	font-weight: bold;
+	text-align: center;
+}
+
+/* 댓글 css */
+.cmt {
+	clear: both;
+	margin-top: 80px;
+}
+
+.writeArea {
+	resize: none;
+	width: 110%;
+	border: silver solid 3px;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 5px;
+	padding-left: 15px;
+	border: silver solid 3px;
+}
+
+.writeArea:focus {
+	outline: none;
+}
+
+.writeArea2 {
+	resize: none;
+	width: 185%;
+	border: silver solid 3px;
+	border-radius: 10px;
+	margin-left: 20px;
+	padding: 5px;
+	padding-left: 15px;
+	border: silver solid 3px;
+	margin-bottom: 20px;
+}
+
+.writeArea2:focus {
+	outline: none;
+}
+
+.writeBtn {
+	height: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 18px;
+	margin-top: 25px;
+	margin-right: 10px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: silver;
+	color: #ffffff;
+}
+
+.writeBtn2 {
+	height: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-top: 28px;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: silver;
+	color: #ffffff;
+}
+
+.cmtBtn {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: silver;
+	color: #ffffff;
+}
+
+.myCmtBtnRight { /*버튼 float:right 주고 싶을 때*/
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #337ab7;
+	color: #ffffff;
+	float: right;
+	margin-left: 10px;
+}
+
+.myCmtBtn-DelRight { /*삭제버튼 float:right 주고 싶을 때*/
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: red;
+	color: #ffffff;
+	float: right;
+	margin-left: 10px;
+}
+
+.updateArea {
+	resize: none;
+	width: 200%;
+	border: silver solid 3px;
+	border-radius: 10px;
+	margin-left: 20px;
+	margin-top: 10px;
+	padding: 5px;
+	padding-left: 15px;
+	border: silver solid 3px;
+}
+
+.updateArea:focus {
+	outline: none;
+}
+
+.updateBtn {
+	height: 50px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-top: 15px;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: silver;
+	color: #ffffff;
+}
+
+.dContent {
+	font-size: 16pt;
+	font-weight: 600;
+}
+
+.dContent2 {
+	font-size: 14pt;
+	font-weight: 500;
+}
+
+.myImg {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.progress, .progress-bar {
+	height: 40px;
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+.dBtn {
+	height: 40px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	margin-left: 10px;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #337ab7;
+	color: #ffffff;
+}
+
+html {
+	height: 100%;
+}
+
+
+@media (min-width: 768px){
+.updateForm {
+    flex: 0 0 auto;
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px){
+.my8Form {
+    flex: 0 0 auto;
+    width: 67%;
+    margin: 0 auto;
+}
+
+.admin {
+	border: 1px solid #337ab7;
+	color: #337ab7;
+	font-size: 18pt;
+	font-weight: 400;
+	width: 150px;
+	height: 50px;
+	margin: 10px;
+	margin-bottom: 50px;
+}
+
+.admin:hover {
+	color: #ffffff;
+	background-color: #337ab7;
+	border: none;
+}

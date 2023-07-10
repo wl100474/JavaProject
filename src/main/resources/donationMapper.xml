@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wl1004.project.donation.DonationMapper">
+	<select id="getDonation" resultType="com.wl1004.project.donation.Donation">
+		select * from donation
+	</select>
+	
+	<insert id="regDonation" parameterType="com.wl1004.project.donation.Donation">
+		insert into donation values(donation_seq.nextval, #{d_title}, #{d_content}, #{d_photo}, #{d_startDate}, #{d_endDate}, #{d_goal}, 0, 1, sysdate)
+	</insert>
+	
+	<!-- 기부 금액 수정 -->
+	<update id="updateAmount" parameterType="int">
+		update donation set d_amount = d_amount + #{amount} where d_no = #{d_no}
+	</update>
+	
+	<!-- 기부 명단에 회원 정보 입력 -->
+	<insert id="insert" parameterType="map">
+		insert into d_list values(#{d_no}, #{m_id}, #{amount}, #{d_regno}, sysdate)
+	</insert>
+	
+</mapper>
