@@ -1,4 +1,4 @@
 [[redirects]]
 from = '/*'
-to = "index.jsp"
+to = "index"
 status = 200
