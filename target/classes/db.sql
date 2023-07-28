@@ -5,7 +5,7 @@ create table v_member(
 	m_name varchar2(10 char) not null,
 	m_email varchar2(30 char) not null
 );
-
+insert into v_member values('admin', '1234', '관리자', 'admin@gmail.com');
 select * from v_member;
 alter table v_member add m_regdate date default sysdate not null;
 update v_member set m_regdate = '2023-05-15' where m_id = 'wl6717';
@@ -30,6 +30,8 @@ create table volunteer(
 		references v_member(m_id)
 		on delete cascade
 );
+
+insert into volunteer values(volunteer_seq.nextval, 'admin', '동물복지 봉사 활동', '자원봉사', '내용', '2023-07-26', 18, '서울 강남구', 10, 0, 1, '채팅링크', sysdate-4);
 
 create sequence volunteer_seq;
 select * from volunteer;
