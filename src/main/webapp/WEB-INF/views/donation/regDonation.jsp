@@ -22,8 +22,8 @@
 						placeholder="펀딩에 대한 설명(200자 이내)" maxlength="200" autocomplete="off"></textarea>
 				</div>
 				<div class="form-group">
-					<label for="posterMF"><h3>사진</h3></label><br> 
-					<input type="file" class="form-control-file" id="posterMF" name="posterMF">
+					<label for="d_photo"><h3>사진</h3></label><br> 
+					<input type="file" class="form-control-file" id="d_photo" name="d_photo">
 				</div>
 				<div class="form-group">
 					<label><h3>펀딩 일정</h3></label><br> 
