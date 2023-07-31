@@ -93,7 +93,7 @@ public class VolunteerDAO {
 	}
 
 	// 검색어 (글 내용에 포함되는 게시글만)
-	private int countSearchMsg(String search) { // Controller에서 사용할 것이 아니라서 private으로 작성
+	private int countSearchMsg(String search) { 
 		try {
 
 			return ss.getMapper(VolunteerMapper.class).countSearch(search);

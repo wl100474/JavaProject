@@ -57,8 +57,7 @@
 				<c:if test="${detail.v_status == 2}">
 					<div class="textB">이미 종료된 봉사입니다.</div>
 				</c:if>
-				<c:if
-					test="${sessionScope.loginMember.m_id != null && sessionScope.loginMember.m_id != detail.v_writer}">
+				<c:if test="${sessionScope.loginMember.m_id != null && sessionScope.loginMember.m_id != detail.v_writer}">
 					<c:if test="${list == null && detail.v_status == 1}">
 						<button class="btn myBtnRight">신청하기</button>
 					</c:if>
